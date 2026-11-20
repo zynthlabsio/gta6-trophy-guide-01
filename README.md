@@ -4,16 +4,13 @@
 [![rank](https://make.fun/badge/gta6-trophy-guide-01/zynthlabsio/gta6-trophy-guide-01/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 [![reward](https://make.fun/badge/gta6-trophy-guide-01/zynthlabsio/gta6-trophy-guide-01/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 
-A complete offline companion for chasing every PlayStation 5 trophy in GTA 6 — all 55 of them, in one place.
+A fully offline static web app that walks you through all 55 PlayStation 5 trophies in GTA VI — from first unlock to platinum.
 
-What you get:
+Every trophy comes with a cited step-by-step guide, so you can check the source before you commit to a run. A platinum roadmap lays out the order to tackle them in, and trophies that can be locked out for good are flagged as missable before you pass the point of no return.
 
-- A sourced walkthrough for each trophy, so you know exactly what to do and where.
-- A step-by-step route to the platinum, in a sensible play order.
-- Clear warnings on trophies you can miss for good if you pass a story point.
-- A checklist that remembers what you have unlocked, with filters to find what is left and a spoiler toggle to hide story details.
+Your progress is saved in the built-in checklist: tick off trophies as you earn them, filter down to what's still missing, and flip the spoiler setting to keep story details hidden until you want them.
 
-Everything runs locally — open it and play, no internet connection required.
+No account, no server, no network — the whole thing runs from your own machine.
 
 ## Run it
 
