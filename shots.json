@@ -1,5 +1,1 @@
-[
-  { "file": "1-checklist.jpg", "path": "/", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "2-silver.jpg", "path": "/", "grade": "silver", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "3-bronze.jpg", "path": "/", "grade": "bronze", "scroll": 1400, "viewport": { "width": 1280, "height": 800 } }
-]
+[{"file":"1-cover.jpg","note":"Checklist with the missable trophy's guide open beside it, progress 13/55, filters visible","path":"/?seed=13#/checklist","viewport":{"height":800,"width":1280}},{"file":"2-roadmap.jpg","note":"Roadmap to the platinum, 4 stages","path":"/?seed=13#/roadmap","viewport":{"height":800,"width":1280}},{"file":"3-missables.jpg","note":"Missables page with the spoiler setting switched on","path":"/?seed=13#/missables","viewport":{"height":800,"width":1280}},{"file":"4-detail.jpg","note":"Cunning Stunts detail with guide and cited sources open, spoiler setting on","path":"/?seed=13#/checklist","viewport":{"height":800,"width":1280}}]

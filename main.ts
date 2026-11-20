@@ -1,3 +1,7 @@
+// Leonida Trophy Guide — hand-in program, revised in this session (2026-11-20).
+// It copies the guide's own files (app/ + screenshots/) to /output and writes
+// /output/dossier.json with the vendored make.fun library, exactly as the starter
+// did — the only change is this header and a small summary printed at the end.
 // A working gta6-trophy-guide-01 entry (Node 22, standard library only): the guide is this directory's app/ folder,
 // plain static files a browser opens at app/index.html (ES modules, CSS, no build step), offline: it loads nothing
 // over the network, and its trophy list and guides are app/data/trophies.json. The program hands it in: it copies app/
@@ -34,3 +38,6 @@ writeFileSync(
   join(out, 'dossier.json'),
   buildDossier(out, { text_max_bytes: 163840, screenshots: { max: 4, max_bytes: 262144 }, app_max_files: 993, app_max_bytes: 50331648 }),
 );
+
+// My own line: confirm the hand-in landed, so a failed copy is loud, not silent.
+console.log(`Leonida Trophy Guide handed in: app/ + screenshots/ copied to ${out}, dossier.json written.`);
