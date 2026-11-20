@@ -4,84 +4,76 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Leonida Trophy Guide — GTA VI · All 55 PS5 Trophies</title>
-<meta name="description" content="Offline guide and tracker for all 55 Grand Theft Auto VI PlayStation 5 trophies: roadmap to the platinum, missable flags, cited guides, saved checklist.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ff5da2'/%3E%3Ctext x='32' y='44' font-size='32' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%2314101f'%3EVI%3C/text%3E%3C/svg%3E">
+<meta name="description" content="An offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: cited guides, a roadmap to the platinum, missable warnings, and a progress checklist that saves in your browser.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top">
-  <div class="brand">
-    <div class="mark" aria-hidden="true">VI</div>
-    <div>
-      <h1>Leonida Trophy Guide</h1>
-      <p class="sub">Grand Theft Auto VI · PlayStation 5 · all 55 trophies · offline</p>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="lede">Every trophy in GTA VI — what to do, where to do it, and when it can be missed — written in our own words from cited guides, with a tracker that saves in your browser. Fully offline: nothing here loads over the network.</p>
+    <div class="progress-card" id="progressCard" aria-live="polite">
+      <div class="progress-top">
+        <strong id="progressCount">0 / 55 earned</strong>
+        <span id="progressPct">0%</span>
+      </div>
+      <div class="progress-bar" role="progressbar" aria-label="Trophies earned" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progressBar"><span id="progressFill"></span></div>
+      <ul class="grade-counts" id="gradeCounts"></ul>
+      <p class="progress-note" id="progressNote">Tick a trophy to mark it earned. Your progress is saved on this device only.</p>
     </div>
-  </div>
-  <div class="progress-wrap">
-    <p class="progress-line"><strong id="progress-count">0 / 55</strong> earned <span id="progress-pct">0%</span></p>
-    <div class="bar" role="progressbar" aria-label="Trophies earned" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progress-bar"><span id="progress-fill"></span></div>
-    <p class="grade-counts" id="grade-counts"></p>
   </div>
 </header>
-<nav class="tabs" aria-label="Sections">
-  <a href="#/checklist" id="tab-checklist" class="tab">Checklist</a>
-  <a href="#/roadmap" id="tab-roadmap" class="tab">Roadmap to Platinum</a>
-  <a href="#/missables" id="tab-missables" class="tab">Missables</a>
+
+<nav class="tabs" id="tabs" aria-label="Guide sections">
+  <a class="tab" href="#/checklist" data-route="checklist">Checklist</a>
+  <a class="tab" href="#/roadmap" data-route="roadmap">Roadmap to Platinum</a>
+  <a class="tab" href="#/missables" data-route="missables">Missables</a>
 </nav>
-<section class="controls" aria-label="Tracker controls">
-  <label class="search-label">Search <input id="search" type="search" placeholder="Trophy or mission name…" autocomplete="off"></label>
-  <fieldset class="kind-filters" id="kind-filters">
-    <legend>Kind</legend>
-    <button type="button" data-kind="all" class="chip active">All</button>
-    <button type="button" data-kind="story" class="chip">Story</button>
-    <button type="button" data-kind="missable" class="chip">Missable</button>
-    <button type="button" data-kind="collectibles" class="chip">Collectibles</button>
-    <button type="button" data-kind="activities" class="chip">Activities</button>
-    <button type="button" data-kind="online" class="chip">Online</button>
-  </fieldset>
-  <label>Grade <select id="grade">
-    <option value="all">All grades</option>
-    <option value="platinum">Platinum</option>
-    <option value="gold">Gold</option>
-    <option value="silver">Silver</option>
-    <option value="bronze">Bronze</option>
-  </select></label>
-  <label class="toggle"><input id="spoiler" type="checkbox" checked> Hide story spoilers</label>
-  <label class="toggle"><input id="earned-only" type="checkbox"> Earned only</label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json,.json"></label>
-  <button id="reset" type="button">Reset</button>
+
+<section class="toolbar" id="toolbar" aria-label="Filters and tools">
+  <label class="search-box">
+    <span class="visually-hidden">Search trophies by name</span>
+    <input type="search" id="searchInput" placeholder="Search a trophy by name…" autocomplete="off">
+  </label>
+  <div class="chip-row" id="kindChips" role="group" aria-label="Filter by kind">
+    <button class="chip is-active" data-kind="all" type="button">All kinds</button>
+    <button class="chip" data-kind="story" type="button">Story</button>
+    <button class="chip" data-kind="missable" type="button">Missable</button>
+    <button class="chip" data-kind="collectibles" type="button">Collectibles</button>
+    <button class="chip" data-kind="activities" type="button">Activities</button>
+    <button class="chip" data-kind="online" type="button">Online</button>
+  </div>
+  <label class="grade-pick">
+    Grade
+    <select id="gradeSelect">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label class="spoiler-toggle">
+    <input type="checkbox" id="spoilerToggle">
+    <span>Hide story spoilers</span>
+  </label>
+  <div class="tool-buttons">
+    <button id="exportBtn" type="button">Export progress</button>
+    <button id="importBtn" type="button">Import progress</button>
+    <input type="file" id="importFile" accept="application/json,.json" hidden>
+    <button id="resetBtn" type="button" class="danger">Reset</button>
+  </div>
+  <p class="toolbar-status" id="toolbarStatus" role="status"></p>
 </section>
-<p class="kind-counts" id="kind-counts"></p>
-<p class="honesty">Honest note: the game released 19 Nov 2026 and published guides are still being completed. Where a step is not yet confirmed in a cited source, the guide says so instead of inventing it.</p>
-<main>
-  <section id="view-checklist" class="view">
-    <div class="layout">
-      <div class="list-col">
-        <p class="list-meta" id="list-meta"></p>
-        <ul class="trophy-list" id="trophy-list"></ul>
-      </div>
-      <aside class="detail" id="detail" aria-live="polite"></aside>
-    </div>
-  </section>
-  <section id="view-roadmap" class="view" hidden>
-    <h2>Roadmap to the Platinum — “Vice Got a Price!”</h2>
-    <p class="intro">PowerPyx rates the set 4/10 and about 200 hours, one playthrough, no online trophies, no mission replay — so keep a manual save at the start and end of each chapter (15 manual slots). The order below is built from the official descriptions: story chapters first, then the 100% checklist grind, then cleanup. Source: PowerPyx GTA 6 Trophy Guide &amp; Roadmap; Push Square GTA 6 Trophy Guide.</p>
-    <ol class="stages" id="roadmap-stages"></ol>
-    <p class="note">100% completion (A Long Road, gold) is the long pole: PowerPyx says it is closer to 60% true completion — most side quests are not required, collectibles only partly. You need 200 of 277 vehicles scanned, 100 of 255 animals studied, 70 of 80 challenges, 300 of 397 stunts, 15 of 18 card sets and 15 of 18 meditations for the checklist itself.</p>
-  </section>
-  <section id="view-missables" class="view" hidden>
-    <h2>Missable trophies</h2>
-    <p class="intro">Only one trophy is flagged as potentially missable by PowerPyx — everything else can be finished in free-roam after the story. Keep chapter saves anyway: there is no mission replay.</p>
-    <ul class="trophy-list" id="missable-list"></ul>
-    <h3>Not missable — but save anyway</h3>
-    <p class="intro">Story trophies (chapters 1–4, the final mission, Breakfast Run, The Cartel Heist, Child’s Play, Headliners, VCIA Takedown, Operation Savage Glory) unlock automatically and cannot be missed. Character questlines (Andy, Kenton, Billy, Randy, Tyrone, Bret) stay available after the story, and quest givers who vanish mid-story return later — PowerPyx.</p>
-  </section>
-</main>
-<footer>
-  <p>Guides are written in our own words for this entry. Each trophy names its sources beside its guide; official names, descriptions and grades are as PlayStation publishes them (via Exophase / PSNProfiles). No Rockstar logo or artwork is used. Works fully offline — progress stays in your browser (localStorage).</p>
-  <p>Sources: <a href="https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/">PowerPyx — GTA 6 Trophy Guide &amp; Roadmap</a> · <a href="https://www.pushsquare.com/guides/gta-6-trophy-guide-and-roadmap">Push Square — GTA 6 Trophy Guide &amp; Roadmap</a></p>
+
+<main id="view" aria-live="polite"></main>
+
+<footer class="colophon">
+  <p><strong>Honest note.</strong> The game released 19 November 2026 and published guides are still being finished. Where a step is not yet confirmed in a cited source, the guide says so instead of inventing it.</p>
+  <p>Guides are written in our own words for this entry. Each trophy names its sources beside its guide; official names, descriptions and grades are as PlayStation publishes them (via Exophase / PSNProfiles). No Rockstar logo or artwork is used. Progress stays in your browser (localStorage) and never leaves your device.</p>
+  <p>Sources: <a href="https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/">PowerPyx — GTA 6 Trophy Guide &amp; Roadmap</a> · <a href="https://www.pushsquare.com/guides/gta-6-trophy-guide-and-roadmap">Push Square — GTA 6 Trophy Guide &amp; Roadmap</a> · <a href="https://www.pushsquare.com/guides/gta-6-100percent-completion-checklist">Push Square — 100% Completion Checklist</a></p>
 </footer>
-<script type="module" src="js/main.js"></script>
+<script type="module" src="js/boot.js"></script>
 </body>
 </html>
